@@ -50,19 +50,19 @@ export default function HeroSection() {
         animate="show"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl sm:max-w-none text-center sm:text-left">
             <motion.h1
               variants={fadeUp}
-              className="font-display italic font-bold leading-[0.95] text-5xl sm:text-6xl lg:text-7xl mb-6 ml-9"
+              className="font-display italic font-bold leading-[0.95] text-5xl sm:text-6xl lg:text-7xl mb-6 sm:ml-9"
             >
               Shoot from
               <br />
-              <span className="ml-11">anywhere!</span>
+              <span className="sm:ml-11">anywhere!</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-base sm:text-lg opacity-90 leading-relaxed max-w-sm ml-20"
+              className="text-base sm:text-lg opacity-90 leading-relaxed max-w-sm mx-auto sm:mx-0 sm:ml-20"
             >
               Forget the hassle of traveling across town or booking expensive
               studios. Whether you're at home, outdoors, or on vacation, we
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
             <motion.div
               variants={fadeUp}
-              className="mt-8 flex flex-col sm:flex-col gap-3 w-fit ml-20"
+              className="mt-8 flex flex-col gap-3 w-fit mx-auto sm:mx-0 sm:ml-20"
             >
               <motion.a
                 whileHover={{ scale: 1.02 }}
