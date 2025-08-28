@@ -1,5 +1,6 @@
 import React from "react";
 import hero from "../assets/images/hero.png";
+import heroMobile from "../assets/images/phone_v_fina.jpg";
 import { motion, Variants } from "framer-motion";
 
 const container: Variants = {
@@ -16,17 +17,28 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative isolate min-h-screen flex items-center"
+      className="relative isolate min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background image */}
+      {/* Background images */}
       <div className="absolute inset-0 -top-40">
+        {/* Desktop background */}
         <motion.img
           src={hero}
           alt="Elegant portrait background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden sm:block"
           initial={{ scale: 1.05 }}
           animate={{ scale: [1.05, 1.02, 1.05], x: [0, 6, 0], y: [0, -6, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        />
+        
+        {/* Mobile background */}
+        <motion.img
+          src={heroMobile}
+          alt="Mobile portrait background"
+          className="w-full h-full object-cover block sm:hidden"
+          initial={{ scale: 1.05 }}
+          animate={{ scale: [1.05, 1.02, 1.05], x: [0, 6, 0], y: [0, -6, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
         />
       </div>
 

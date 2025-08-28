@@ -18,8 +18,8 @@ const WhatsAppFloatingButton: React.FC<WhatsAppFloatingButtonProps> = ({
 
   const style: React.CSSProperties =
     position === "left"
-      ? { left: "max(env(safe-area-inset-left, 0px), 12px)" }
-      : { right: "max(env(safe-area-inset-right, 0px), 12px)" };
+      ? { left: "max(env(safe-area-inset-left, 0px), 220px)" }
+      : { right: "max(env(safe-area-inset-right, 0px), 220px)" };
 
   return (
     <a
@@ -29,7 +29,7 @@ const WhatsAppFloatingButton: React.FC<WhatsAppFloatingButtonProps> = ({
       aria-label="Chat with Vivid Studios on WhatsApp"
       className={[
         "fixed z-[60] top-1/2 -translate-y-1/2",
-        position === "left" ? "left-3 md:left-5" : "right-3 md:right-5",
+        position === "left" ? "left-16 md:left-18" : "right-16 md:right-18",
         "print:hidden",
       ].join(" ")}
       style={style}
@@ -38,10 +38,10 @@ const WhatsAppFloatingButton: React.FC<WhatsAppFloatingButtonProps> = ({
         className="block rounded-full bg-white p-2 md:p-3 shadow-lg shadow-black/25 ring-1 ring-black/10 hover:ring-black/20 hover:shadow-xl transition"
         animate={{ scale: [1, 1.12, 1.04, 1.12, 1] }}
         transition={{
-          duration: 1.4,
+          duration: 0.47,
           times: [0, 0.18, 0.36, 0.54, 1],
           repeat: Infinity,
-          repeatDelay: 0.9,
+          repeatDelay: 0.3,
           ease: "easeInOut",
         }}
         whileHover={{ scale: 1.08 }}

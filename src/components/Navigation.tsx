@@ -102,13 +102,13 @@ export default function Navigation() {
 
       {/* Mobile menu panel */}
       <div
-        className={`sm:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${
+        className={`sm:hidden overflow-hidden transition-[max-height,opacity] duration-300 bg-black text-center ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
         aria-hidden={!open}
       >
         <div className="px-4 pb-4 pt-0 border-t border-white/10">
-          <div className="flex flex-col gap-2 py-3">
+          <div className="flex flex-col gap-2 py-4">
             {[...linksLeft, ...linksRight].map((link) => (
               <a
                 key={link.label}
