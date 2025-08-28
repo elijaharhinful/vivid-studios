@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, Variants } from "framer-motion";
 
 type Aspect = "square" | "portrait34" | "portrait45" | "landscape169";
 
@@ -57,11 +58,37 @@ const GallerySection: React.FC<GallerySectionProps> = ({
         .filter(Boolean)
     : [title];
 
+  const headingReveal: Variants = {
+    hidden: { opacity: 0, y: 16 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  };
+
+  const gridContainer = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.08 } },
+  };
+
+  const card: Variants = {
+    hidden: { opacity: 0, y: 18, scale: 0.98 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id={id} className="py-20 px-6 sm:px-8">
       <div className="max-w-6xl mx-auto">
         {headingVariant === "splitLeftRight" ? (
-          <div className="mb-12 sm:mb-16">
+          <motion.div
+            className="mb-12 sm:mb-16"
+            variants={headingReveal}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className="mx-auto max-w-4xl md:flex md:items-center justify-center md:gap-4">
               <h2 className="font-display italic font-bold leading-[0.95] text-5xl sm:text-6xl lg:text-7xl max-w-[20ch] shrink-0">
                 <span className="block">{lines[0] || ""}</span>
@@ -75,9 +102,15 @@ const GallerySection: React.FC<GallerySectionProps> = ({
                 {description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ) : headingVariant === "centered" ? (
-          <div className="mb-12 sm:mb-16 text-center">
+          <motion.div
+            className="mb-12 sm:mb-16 text-center"
+            variants={headingReveal}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <h2
               className="font-display italic font-bold text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6"
               dangerouslySetInnerHTML={{ __html: title }}
@@ -85,9 +118,15 @@ const GallerySection: React.FC<GallerySectionProps> = ({
             <p className="text-base sm:text-lg opacity-80 max-w-lg mx-auto">
               {description}
             </p>
-          </div>
+          </motion.div>
         ) : (
-          <div className="mb-12 sm:mb-16">
+          <motion.div
+            className="mb-12 sm:mb-16"
+            variants={headingReveal}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <h2
               className="font-display italic font-bold text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6"
               dangerouslySetInnerHTML={{ __html: title }}
@@ -95,41 +134,63 @@ const GallerySection: React.FC<GallerySectionProps> = ({
             <p className="text-base sm:text-lg opacity-80 max-w-lg">
               {description}
             </p>
-          </div>
+          </motion.div>
         )}
 
         {layout === "single" ? (
-          <div className="max-w-7xl md:-mt-20 mx-auto">
+          <motion.div
+            className="max-w-7xl md:-mt-20 mx-auto"
+            variants={headingReveal}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {images[0] && (
-              <div
+              <motion.div
                 className={`${
                   aspectClassMap[images[0].aspect ?? aspect]
                 } overflow-hidden`}
+                initial={{ opacity: 0, y: 18, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <img
                   src={images[0].src}
                   alt={images[0].alt ?? "Gallery image"}
                   className="w-full h-full object-contain"
                 />
-              </div>
+              </motion.div>
             )}
-          </div>
+          </motion.div>
         ) : (
-          <div className={`${gridCols} gap-4 sm:gap-6`}>
+          <motion.div
+            className={`${gridCols} gap-4 sm:gap-6`}
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {images.map((image, index) => {
               const a = aspectClassMap[image.aspect ?? aspect];
               return (
-                <div key={index} className={`${a} overflow-hidden`}>
+                <motion.div
+                  key={index}
+                  className={`${a} overflow-hidden`}
+                  variants={card}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.99 }}
+                >
                   <img
                     src={image.src}
                     alt={image.alt ?? "Gallery image"}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover"
                     loading={index > 1 ? "lazy" : undefined}
                   />
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

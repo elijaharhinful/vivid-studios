@@ -4,6 +4,8 @@ import WhatsAppFloatingButton from "./components/FloatingButton";
 import HeroSection from "./components/HeroSection";
 import GallerySection from "./components/GallerySection";
 import Footer from "./components/Footer";
+import { MotionConfig, LazyMotion, domAnimation } from "framer-motion";
+
 import boxer from "./assets/images/boxer.png";
 import fire from "./assets/images/fire.png";
 import cake from "./assets/images/cake.png";
@@ -41,62 +43,63 @@ const App = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Navigation
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-      />
-      <HeroSection />
+    <MotionConfig reducedMotion="user">
+      <LazyMotion features={domAnimation}>
+        <div className="min-h-screen bg-black text-white">
+          <Navigation />
+          <HeroSection />
 
-      <WhatsAppFloatingButton
-        phone="233264525811"
-        message="Hello! I'd like to book a Vivid Studios session."
-      />
+          <WhatsAppFloatingButton
+            phone="233264525811"
+            message="Hello! I'd like to book a Vivid Studios session."
+          />
 
-      <GallerySection
-        id="instant-variety"
-        title="Instant<br />Variety"
-        description="Why settle for one look when you can have many? From red-carpet glam to boardroom-ready, switch styles in a single session; no outfit changes, no limits."
-        images={instantVarietyImages}
-        columns={3}
-        headingVariant="splitLeftRight"
-        varietyIndentClass="pl-10 md:pl-14"
-        aspect="portrait45"
-      />
+          <GallerySection
+            id="instant-variety"
+            title="Instant<br />Variety"
+            description="Why settle for one look when you can have many? From red-carpet glam to boardroom-ready, switch styles in a single session; no outfit changes, no limits."
+            images={instantVarietyImages}
+            columns={3}
+            headingVariant="splitLeftRight"
+            varietyIndentClass="pl-10 md:pl-14"
+            aspect="portrait45"
+          />
 
-      <GallerySection
-        id="bye-bye"
-        title="Bye Bye<br />Clothing Rentals..."
-        description="You don't need to buy or rent a single outfit. Whether you want chic, professional, casual, or high-fashion, every look is created to match your style without the wardrobe struggle."
-        images={clothingImages}
-        columns={3}
-        headingVariant="centered"
-        varietyIndentClass="pl-10 md:pl-14"
-        aspect="square"
-      />
+          <GallerySection
+            id="bye-bye"
+            title="Bye Bye<br />Clothing Rentals..."
+            description="You don't need to buy or rent a single outfit. Whether you want chic, professional, casual, or high-fashion, every look is created to match your style without the wardrobe struggle."
+            images={clothingImages}
+            columns={3}
+            headingVariant="centered"
+            varietyIndentClass="pl-10 md:pl-14"
+            aspect="square"
+          />
 
-      <GallerySection
-        title="Forget Makeup!<br />No Hair stress..."
-        description="Look your best effortlessly. No more hours in front of a mirror, salon appointments, or shopping over beauty routines."
-        images={makeupImages}
-        columns={1}
-        headingVariant="splitLeftRight"
-        layout="single"
-        aspect="landscape169"
-      />
+          <GallerySection
+            title="Forget Makeup!<br />No Hair stress..."
+            description="Look your best effortlessly. No more hours in front of a mirror, salon appointments, or shopping over beauty routines."
+            images={makeupImages}
+            columns={1}
+            headingVariant="splitLeftRight"
+            layout="single"
+            aspect="landscape169"
+          />
 
-      <GallerySection
-        title="Vivid Visuals Always"
-        description="Every image bursts with clarity, color and detail. No dull frames, no flat lighting.From portraits to full creative spreads, your photos always look striking, polished, and alive."
-        images={portfolioImages}
-        columns={4}
-        headingVariant="centered"
-        varietyIndentClass="pl-10 md:pl-14"
-        aspect="square"
-      />
+          <GallerySection
+            title="Vivid Visuals Always"
+            description="Every image bursts with clarity, color and detail. No dull frames, no flat lighting.From portraits to full creative spreads, your photos always look striking, polished, and alive."
+            images={portfolioImages}
+            columns={4}
+            headingVariant="centered"
+            varietyIndentClass="pl-10 md:pl-14"
+            aspect="square"
+          />
 
-      <Footer />
-    </div>
+          <Footer />
+        </div>
+      </LazyMotion>
+    </MotionConfig>
   );
 };
 

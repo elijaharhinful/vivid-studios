@@ -1,6 +1,7 @@
 import React from "react";
 import { Instagram, Linkedin } from "lucide-react";
 import vividLogo from "../assets/images/vivid_logo.png";
+import { motion } from "framer-motion";
 
 const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({
   size = 28,
@@ -23,7 +24,13 @@ const Footer: React.FC = () => {
     <footer className="bg-black text-white border-t-[0.5px] border-white/40">
       <div className="max-w-6xl mx-auto px-0 py-16">
         {/* TOP: 4 columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-center">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-center"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
           {/* 1) Brand logo + line */}
           <div className="flex flex-col items-center">
             <img
@@ -64,15 +71,33 @@ const Footer: React.FC = () => {
           {/* 3) Socials */}
           <div>
             <div className="flex items-center gap-6">
-              <a href="#" aria-label="TikTok" className="opacity-80 hover:opacity-100">
+              <motion.a
+                whileHover={{ scale: 1.06, rotate: 2 }}
+                whileTap={{ scale: 0.95 }}
+                href="#"
+                aria-label="TikTok"
+                className="opacity-80 hover:opacity-100"
+              >
                 <TikTokIcon size={30} />
-              </a>
-              <a href="#" aria-label="Instagram" className="opacity-80 hover:opacity-100">
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.06, rotate: 2 }}
+                whileTap={{ scale: 0.95 }}
+                href="#"
+                aria-label="Instagram"
+                className="opacity-80 hover:opacity-100"
+              >
                 <Instagram size={30} />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="opacity-80 hover:opacity-100">
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.06, rotate: 2 }}
+                whileTap={{ scale: 0.95 }}
+                href="#"
+                aria-label="LinkedIn"
+                className="opacity-80 hover:opacity-100"
+              >
                 <Linkedin size={30} />
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -88,10 +113,16 @@ const Footer: React.FC = () => {
               <li>Campaigns & Commercial</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* BOTTOM: 2 columns */}
-        <div className="mt-12 pt-8 border-t border-white/80 text-sm md:text-base opacity-80 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <motion.div
+          className="mt-12 pt-8 border-t border-white/80 text-sm md:text-base opacity-80 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {/* Left: copyright */}
           <div>© 2025 Vivid Studios. All rights reserved.</div>
 
@@ -113,7 +144,7 @@ const Footer: React.FC = () => {
               Contact Us
             </a>
           </nav>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
