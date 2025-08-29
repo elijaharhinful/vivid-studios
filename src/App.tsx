@@ -10,7 +10,7 @@ import boxer from "./assets/images/boxer.png";
 import fire from "./assets/images/fire.png";
 import cake from "./assets/images/cake.png";
 import yellow from "./assets/images/yellow.png";
-import black_dress from "./assets/images/black_dress.png";
+import blue_dress from "./assets/images/black_dress.png";
 import Fabric_holding from "./assets/images/Fabric_holding.png";
 import Group from "./assets/images/Group.png";
 import roses from "./assets/images/roses.png";
@@ -29,7 +29,7 @@ const App = () => {
 
   const clothingImages = [
     { src: yellow, alt: "casual sports style photoshoot" },
-    { src: black_dress, alt: "lady in balck portrait" },
+    { src: blue_dress, alt: "lady in balck portrait" },
     { src: Fabric_holding, alt: "fabric holding photoshoot" },
   ];
 

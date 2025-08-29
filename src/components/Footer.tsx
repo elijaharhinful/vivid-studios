@@ -22,7 +22,7 @@ const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white border-t-[0.5px] border-white/40">
-      <div className="max-w-6xl mx-auto px-0 py-16">
+      <div className="max-w-6xl mx-auto px-0 py-16 text-center sm:text-left">
         {/* TOP: 4 columns */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-center"
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
 
           {/* 3) Socials */}
           <div>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 justify-center">
               <motion.a
                 whileHover={{ scale: 1.06, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
         {/* BOTTOM: 2 columns */}
         <motion.div
-          className="mt-12 pt-8 border-t border-white/80 text-sm md:text-base opacity-80 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+          className="mt-12 pt-8 border-t border-white/80 text-sm md:text-base opacity-80 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-center"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}

@@ -49,7 +49,7 @@ export default function HeroSection() {
         initial="hidden"
         animate="show"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-65 sm:mt-0">
           <div className="max-w-2xl sm:max-w-none text-center sm:text-left">
             <motion.h1
               variants={fadeUp}
