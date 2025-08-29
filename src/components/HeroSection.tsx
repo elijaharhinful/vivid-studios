@@ -13,6 +13,12 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+  const phone="233264525811";
+  const message = "Hello! I'd like to book a Vivid Studios session.";
+  const book_href = `https://wa.me/${phone}${
+    message ? `?text=${encodeURIComponent(message)}` : ""
+  }`;
+
 export default function HeroSection() {
   return (
     <section
@@ -49,7 +55,7 @@ export default function HeroSection() {
         initial="hidden"
         animate="show"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-65 sm:mt-0">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-85 sm:mt-0">
           <div className="max-w-2xl sm:max-w-none text-center sm:text-left">
             <motion.h1
               variants={fadeUp}
@@ -62,12 +68,9 @@ export default function HeroSection() {
 
             <motion.p
               variants={fadeUp}
-              className="text-base sm:text-lg opacity-90 leading-relaxed max-w-sm mx-auto sm:mx-0 sm:ml-20"
+              className="text-sm/6 sm:text-lg opacity-90 leading-relaxed max-w-sm mx-auto sm:mx-0 sm:ml-20"
             >
-              Forget the hassle of traveling across town or booking expensive
-              studios. Whether you're at home, outdoors, or on vacation, we
-              bring the professional photoshoot to you—no commute, no stress;
-              just effortless results.
+              Forget the hassle of traveling across town. No matter where you are, we bring the photoshoot to you. No commute, No stress; just effortless results!
             </motion.p>
 
             <motion.div
@@ -77,7 +80,7 @@ export default function HeroSection() {
               <motion.a
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                href="#book"
+                href={book_href}
                 className="inline-flex items-center justify-center border border-white px-7 py-3 text-sm sm:text-base font-medium hover:bg-white hover:text-black transition-colors"
               >
                 Book a Session
