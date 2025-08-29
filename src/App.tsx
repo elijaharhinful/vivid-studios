@@ -13,6 +13,7 @@ import yellow from "./assets/images/yellow.png";
 import blue_dress from "./assets/images/black_dress.png";
 import Fabric_holding from "./assets/images/Fabric_holding.png";
 import Group from "./assets/images/Group.png";
+import Group70 from "./assets/images/Group70.png";
 import roses from "./assets/images/roses.png";
 import sara from "./assets/images/sara.png";
 import funky from "./assets/images/funky.png";
@@ -33,8 +34,20 @@ const App = () => {
     { src: Fabric_holding, alt: "fabric holding photoshoot" },
   ];
 
-  const makeupImages = [{ src: Group, alt: "Colorful makeup look" }];
-
+  const makeupImages = [
+  {
+    src: Group,
+    alt: "Colorful makeup look",
+    className: "hidden sm:block",
+    aspect:"landscape169" as const,
+  },
+  {
+    src: Group70,
+    alt: "Colorful makeup look (mobile)",
+    className: "block sm:hidden", 
+    mobileAspect: "portrait34" as const,
+  },
+];
   const portfolioImages = [
     { src: roses, alt: "lady with roses photoshoot" },
     { src: sara, alt: "sara with specs portrait" },
@@ -83,7 +96,6 @@ const App = () => {
             columns={1}
             headingVariant="splitLeftRight"
             layout="single"
-            aspect="landscape169"
           />
 
           <GallerySection

@@ -7,6 +7,8 @@ type ImageItem = {
   src: string;
   alt?: string;
   aspect?: Aspect;
+  mobileAspect?: Aspect;
+  className?: string;
 };
 
 interface GallerySectionProps {
@@ -145,23 +147,31 @@ const GallerySection: React.FC<GallerySectionProps> = ({
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
           >
-            {images[0] && (
-              <motion.div
-                className={`${
-                  aspectClassMap[images[0].aspect ?? aspect]
-                } overflow-hidden`}
-                initial={{ opacity: 0, y: 18, scale: 0.98 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <img
-                  src={images[0].src}
-                  alt={images[0].alt ?? "Gallery image"}
-                  className="w-full h-full object-contain"
-                />
-              </motion.div>
-            )}
+            {images.map((image, index) => {
+              const desktopAspect = aspectClassMap[image.aspect ?? aspect];
+              const mobileAspect = image.mobileAspect
+                ? aspectClassMap[image.mobileAspect]
+                : desktopAspect;
+              return (
+                <motion.div
+                  key={index}
+                  className={`${mobileAspect} sm:${desktopAspect} ${
+                      image.className ?? ""
+                    } overflow-hidden`}
+                  initial={{ opacity: 0, y: 18, scale: 0.98 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt ?? "Gallery image"}
+                    className={`w-full h-full object-contain`}
+                    loading={index > 1 ? "lazy" : undefined}
+                  />
+                </motion.div>
+              );
+            })}
           </motion.div>
         ) : (
           <motion.div

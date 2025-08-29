@@ -59,11 +59,11 @@ export default function HeroSection() {
           <div className="max-w-2xl sm:max-w-none text-center sm:text-left">
             <motion.h1
               variants={fadeUp}
-              className="font-display italic font-bold leading-[0.95] text-5xl sm:text-6xl lg:text-7xl mb-6 sm:ml-9"
+              className="font-display italic font-bold leading-[0.95] text-5xl sm:text-6xl lg:text-7xl mb-6 -ml-5 sm:ml-9"
             >
               Shoot from
               <br />
-              <span className="sm:ml-11">anywhere!</span>
+              <span className="ml-14 sm:ml-11">anywhere!</span>
             </motion.h1>
 
             <motion.p
