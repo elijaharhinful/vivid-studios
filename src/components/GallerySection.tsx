@@ -166,7 +166,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({
                   <img
                     src={image.src}
                     alt={image.alt ?? "Gallery image"}
-                    className={`w-full h-full object-cover`}
+                    className={`w-full h-full object-contain`}
                     loading={index > 1 ? "lazy" : undefined}
                   />
                 </motion.div>
