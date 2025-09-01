@@ -21,7 +21,7 @@ const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white border-t-[0.5px] border-white/40">
+    <footer className="bg-black text-white border-t-[0.5px] border-white/40 mt-20 sm:mt-0">
       <div className="max-w-6xl mx-auto px-0 py-16 text-center sm:text-left">
         {/* TOP: 4 columns */}
         <motion.div

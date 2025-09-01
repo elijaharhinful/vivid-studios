@@ -82,7 +82,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({
 
   return (
     <section id={id} className="py-20 px-6 sm:px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto -mb-25 sm:-mb-0">
         {headingVariant === "splitLeftRight" ? (
           <motion.div
             className="mb-12 sm:mb-16"
@@ -156,8 +156,8 @@ const GallerySection: React.FC<GallerySectionProps> = ({
                 <motion.div
                   key={index}
                   className={`${mobileAspect} sm:${desktopAspect} ${
-                      image.className ?? ""
-                    } overflow-hidden`}
+                    image.className ?? ""
+                  } overflow-hidden`}
                   initial={{ opacity: 0, y: 18, scale: 0.98 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, amount: 0.35 }}
@@ -166,7 +166,7 @@ const GallerySection: React.FC<GallerySectionProps> = ({
                   <img
                     src={image.src}
                     alt={image.alt ?? "Gallery image"}
-                    className={`w-full h-full object-contain`}
+                    className={`w-full h-full object-cover`}
                     loading={index > 1 ? "lazy" : undefined}
                   />
                 </motion.div>
