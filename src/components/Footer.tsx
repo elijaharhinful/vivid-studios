@@ -56,15 +56,6 @@ const Footer: React.FC = () => {
                   info@vividstudios.com
                 </a>
               </li>
-              <li>
-                WhatsApp:{" "}
-                <a
-                  href="https://wa.me/233264525811"
-                  className="underline hover:opacity-100"
-                >
-                  +233 (26) 452 5811
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -74,7 +65,7 @@ const Footer: React.FC = () => {
               <motion.a
                 whileHover={{ scale: 1.06, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
-                href="#"
+                href="https://vm.tiktok.com/ZMHtDF4DmBBWB-m8YbU/"
                 aria-label="TikTok"
                 className="opacity-80 hover:opacity-100"
               >
@@ -108,7 +99,6 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="text-sm md:text-base opacity-80 space-y-1">
               <li>Virtual Photoshoots</li>
-              <li>Personal Branding</li>
               <li>Fine Art Photography</li>
               <li>Campaigns & Commercial</li>
             </ul>
