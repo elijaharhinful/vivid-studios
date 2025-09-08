@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import logo from "../assets/images/vivid_logo.png";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const linksLeft = [
   { label: "How It Works", href: "#how" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Portfolio", href: "/portfolio", isRoute: true },
 ];
 
 const linksRight = [
@@ -14,6 +15,40 @@ const linksRight = [
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const renderLink = (link: any) => {
+    const isActive = link.isRoute && location.pathname === link.href;
+    const baseClass = `hover:text-white hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded ${
+      isActive ? "text-white underline" : ""
+    }`;
+
+    if (link.isRoute) {
+      return (
+        <motion.div
+          whileHover={{ y: -1, opacity: 1 }}
+          whileTap={{ scale: 0.98 }}
+          key={link.label}
+        >
+          <Link to={link.href} className={baseClass}>
+            {link.label}
+          </Link>
+        </motion.div>
+      );
+    }
+
+    return (
+      <motion.a
+        whileHover={{ y: -1, opacity: 1 }}
+        whileTap={{ scale: 0.98 }}
+        key={link.label}
+        href={link.href}
+        className={baseClass}
+      >
+        {link.label}
+      </motion.a>
+    );
+  };
 
   return (
     <motion.nav
@@ -61,20 +96,18 @@ export default function Navigation() {
 
         {/* Left links (desktop) */}
         <div className="hidden sm:flex items-center gap-24 text-white/90 text-md tracking-wide">
-          {linksLeft.map((link) => (
-            <motion.a whileHover={{ y: -1, opacity: 1 }} whileTap={{ scale: 0.98 }}
-              key={link.label}
-              href={link.href}
-              className="hover:text-white hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
-            >
-              {link.label}
-            </motion.a>
-          ))}
+          {linksLeft.map(renderLink)}
         </div>
 
         {/* Center logo */}
         <div className="justify-self-center mx-auto">
-          <motion.a whileHover={{ y: -1, opacity: 1 }} whileTap={{ scale: 0.98 }} href="#home" aria-label="VIVID Home" className="inline-block">
+          <motion.a
+            whileHover={{ y: -1, opacity: 1 }}
+            whileTap={{ scale: 0.98 }}
+            href="/"
+            aria-label="VIVID Home"
+            className="inline-block"
+          >
             <img
               src={logo}
               alt="VIVID Studios logo"
@@ -85,15 +118,7 @@ export default function Navigation() {
 
         {/* Right links (desktop) */}
         <div className="hidden sm:flex items-center justify-end gap-24 text-white/90 text-md tracking-wide">
-          {linksRight.map((link) => (
-            <motion.a whileHover={{ y: -1, opacity: 1 }} whileTap={{ scale: 0.98 }} 
-              key={link.label}
-              href={link.href}
-              className="hover:text-white hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
-            >
-              {link.label}
-            </motion.a>
-          ))}
+          {linksRight.map(renderLink)}
         </div>
 
         {/* Mobile: right spacer to balance the grid when hamburger is shown */}
