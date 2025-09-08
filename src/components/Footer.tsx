@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
               <motion.a
                 whileHover={{ scale: 1.06, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
-                href="#"
+                href="https://www.linkedin.com/company/vivid-studios-global/about/?viewAsMember=true"
                 aria-label="LinkedIn"
                 className="opacity-80 hover:opacity-100"
               >
