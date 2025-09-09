@@ -22,7 +22,6 @@ const PortfolioGrid: React.FC<Props> = ({ images, title = "Portfolio" }) => {
     src: img.src,
     alt: img.alt,
     title: img.caption || img.alt,
-    description: img.caption,
   }));
 
   return (
@@ -54,7 +53,7 @@ const PortfolioGrid: React.FC<Props> = ({ images, title = "Portfolio" }) => {
         index={index}
         close={() => setIndex(-1)}
         slides={lightboxImages}
-        plugins={[Thumbnails, Zoom, Fullscreen, Captions]}
+        plugins={[Thumbnails, Zoom, Fullscreen]}
         styles={{
           container: { backgroundColor: "rgba(0, 0, 0, 0.95)" },
         }}
