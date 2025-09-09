@@ -3,8 +3,10 @@ import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "yet-another-react-lightbox/plugins/captions.css"
 
 type Img = { src: string; alt?: string; caption?: string };
 
@@ -20,6 +22,7 @@ const PortfolioGrid: React.FC<Props> = ({ images, title = "Portfolio" }) => {
     src: img.src,
     alt: img.alt,
     title: img.caption || img.alt,
+    description: img.caption,
   }));
 
   return (
@@ -27,7 +30,7 @@ const PortfolioGrid: React.FC<Props> = ({ images, title = "Portfolio" }) => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-bold italic mb-10">{title}</h2>
         
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-1 [column-fill:_balance]">
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-1 [column-fill:_balance]">
           {images.map((img, i) => (
             <button
               key={i}
@@ -51,7 +54,7 @@ const PortfolioGrid: React.FC<Props> = ({ images, title = "Portfolio" }) => {
         index={index}
         close={() => setIndex(-1)}
         slides={lightboxImages}
-        plugins={[Thumbnails, Zoom, Fullscreen]}
+        plugins={[Thumbnails, Zoom, Fullscreen, Captions]}
         styles={{
           container: { backgroundColor: "rgba(0, 0, 0, 0.95)" },
         }}
