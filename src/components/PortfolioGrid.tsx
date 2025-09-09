@@ -29,7 +29,7 @@ const PortfolioGrid: React.FC<Props> = ({ images, title = "Portfolio" }) => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-display font-bold italic mb-10">{title}</h2>
         
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-1 [column-fill:_balance]">
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-1.5 [column-fill:_balance]">
           {images.map((img, i) => (
             <button
               key={i}
