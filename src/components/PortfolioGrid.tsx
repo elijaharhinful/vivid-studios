@@ -27,7 +27,7 @@ const PortfolioGrid: React.FC<Props> = ({ images, title = "Portfolio" }) => {
   return (
     <section className="py-10 md:py-15 px-8 bg-black text-white text-center md:text-left">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold italic mb-10">{title}</h2>
+        <h2 className="text-5xl font-display font-bold italic mb-10">{title}</h2>
         
         <div className="columns-2 md:columns-3 lg:columns-4 gap-1 [column-fill:_balance]">
           {images.map((img, i) => (
