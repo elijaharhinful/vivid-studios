@@ -9,7 +9,7 @@ const linksLeft = [
 ];
 
 const linksRight = [
-  { label: "FAQ", href: "#faq" },
+  { label: "FAQ", href: "/faq", isRoute: true },
   { label: "Contact us", href: "#contact" },
 ];
 
