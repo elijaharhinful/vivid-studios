@@ -16,9 +16,9 @@ export default function Contact() {
       <Navigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-18 pb-14 sm:pt-22 sm:pb-20">
+      <section className="relative overflow-hidden pt-7 pb-14 sm:pt-22 sm:pb-20">
         <div className="container mx-auto px-4 max-w-6xl relative">
-          <h1 className="text-3xl sm:text-5xl font-display italic font-bold tracking-tight text-white">
+          <h1 className="text-2xl sm:text-5xl font-display italic font-bold tracking-tight text-white">
             Let’s Create Something Vivid.
           </h1>
           <p className="mt-4 max-w-3xl text-base sm:text-lg text-neutral-300">
@@ -34,7 +34,7 @@ export default function Contact() {
           {/* Left: Direct contact + social + newsletter */}
           <aside className="lg:col-span-1 space-y-8">
             {/* Card: Direct Contact */}
-            <div className="border border-neutral-800 bg-neutral-900/40 p-6">
+            <div className="p-6">
               <h2 className="text-xl font-semibold text-white">
                 Direct Contact
               </h2>
@@ -63,7 +63,7 @@ export default function Contact() {
             </div>
 
             {/* Card: Stay Connected */}
-            <div className="border border-neutral-800 bg-neutral-900/40 p-6">
+            <div className="p-6">
               <h2 className="text-xl font-semibold text-white">
                 Stay Connected
               </h2>
@@ -131,7 +131,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <div className="lg:col-span-2">
-            <div className="border border-neutral-800 bg-neutral-900/40 p-6 sm:p-8">
+            <div className="p-6 sm:p-8">
               <h2 className="text-xl font-semibold text-white">Contact Form</h2>
               <p className="mt-2 text-sm text-neutral-400">
                 Fill this out and we’ll get back to you shortly.
