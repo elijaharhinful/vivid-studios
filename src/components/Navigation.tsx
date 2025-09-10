@@ -10,7 +10,7 @@ const linksLeft = [
 
 const linksRight = [
   { label: "FAQ", href: "/faq", isRoute: true },
-  { label: "Contact us", href: "#contact" },
+  { label: "Contact us", href: "/contact", isRoute:true },
 ];
 
 export default function Navigation() {

@@ -110,9 +110,6 @@ export function FaqPage() {
           <h1 className="text-2xl font-display md:text-5xl font-bold italic tracking-tight">
             Frequently Asked Questions
           </h1>
-          <p className="mt-4 md:mt-5 text-base md:text-lg text-white/70 max-w-3xl">
-            Let's clarify what confuses you.
-          </p>
         </div>
       </header>
 
@@ -129,7 +126,7 @@ export function FaqPage() {
             </p>
           </div>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center border border-white/20 px-4 py-2 text-sm font-medium hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
             Contact us
