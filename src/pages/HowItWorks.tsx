@@ -16,73 +16,67 @@ export default function HowItWorks() {
 
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-4 py-8">
-        <h1 className="text-4xl md:text-6xl text-center md:text-left font-display italic font-bold tracking-tight text-white">
+        <h1 className="text-4xl md:text-6xl text-center font-display italic font-bold tracking-tight text-white">
           How It Works
         </h1>
       </header>
 
       <main className="mx-auto max-w-6xl px-4 py-4 md:py-4 space-y-10">
-        {/* TOP: Step 1 */}
-        <section aria-labelledby="step1" className="space-y-8">
-          <div className="flex items-center justify-between gap-6">
-            <h2
-              id="step1"
-              className="text-2xl md:text-3xl font-semibold text-white"
-            >
-              Step 1 – Send Us Your Photos
-            </h2>
-          </div>
+       {/* TOP: Step 1 */}
+<section aria-labelledby="step1" className="space-y-12 text-center">
+  {/* Heading */}
+  <div>
+    <h2
+      id="step1"
+      className="text-2xl md:text-3xl font-semibold text-white"
+    >
+      Step 1 – Send Us Your Photos
+    </h2>
+  </div>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="prose prose-invert max-w-none">
-              <p className="text-gray-300">
-                Upload{" "}
-                <span className="text-white font-semibold">
-                  20 clear reference images
-                </span>
-                :
-              </p>
-              <ul className="list-disc pl-6">
-                <li>
-                  <span className="text-white font-medium">10 face shots</span>{" "}
-                  <span className="text-gray-300">
-                    (different angles &amp; expressions, no glasses or masks)
-                  </span>
-                </li>
-                <li>
-                  <span className="text-white font-medium">
-                    10 full-body shots
-                  </span>{" "}
-                  <span className="text-gray-300">
-                    (in fitted clothing — avoid oversized outfits)
-                  </span>
-                </li>
-              </ul>
-              <p className="mt-4 text-gray-300">
-                <span className="text-white font-medium">Tip:</span> Take photos
-                at eye or chest level to keep proportions natural.
-              </p>
-            </div>
-          </div>
+  {/* Text */}
+  <div className="prose prose-invert max-w-2xl mx-auto text-gray-300">
+    <p>
+      Upload{" "}
+      <span className="text-white font-semibold">
+        20 clear reference images
+      </span>
+      :
+    </p>
+    <ul className="list-disc pl-6 text-left mx-auto inline-block">
+      <li>
+        <span className="text-white font-medium">10 face shots</span>{" "}
+        (different angles &amp; expressions, no glasses or masks)
+      </li>
+      <li>
+        <span className="text-white font-medium">10 full-body shots</span>{" "}
+        (in fitted clothing — avoid oversized outfits)
+      </li>
+    </ul>
+    <p className="mt-4">
+      <span className="text-white font-medium">Tip:</span> Take photos
+      at eye or chest level to keep proportions natural.
+    </p>
+  </div>
 
-          {/* Two images (left & right) */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="overflow-hidden">
-              <img
-                src={leftTopImg}
-                alt="Sample reference image (left)"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="overflow-hidden">
-              <img
-                src={rightTopImg}
-                alt="Sample reference image (right)"
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-        </section>
+  {/* Two images (left & right) */}
+  <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <div className="overflow-hidden">
+      <img
+        src={leftTopImg}
+        alt="Sample reference image (left)"
+        className="w-full h-full object-contain"
+      />
+    </div>
+    <div className="overflow-hidden">
+      <img
+        src={rightTopImg}
+        alt="Sample reference image (right)"
+        className="w-full h-full object-contain"
+      />
+    </div>
+  </div>
+</section>
 
         {/* MIDDLE */}
         <section aria-label="Process bridge" className="py-0">
