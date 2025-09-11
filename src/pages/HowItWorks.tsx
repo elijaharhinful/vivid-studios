@@ -7,6 +7,7 @@ import rightTopImg from "../assets/images/how/3.webp";
 import leftBottomImg from "../assets/images/how/2.webp";
 import rightBottomImg from "../assets/images/how/4.webp";
 import arrowImg from "../assets/images/arrow.png";
+import WhatsAppFloatingButton from "../components/FloatingButton";
 
 export default function HowItWorks() {
   return (
@@ -85,35 +86,23 @@ export default function HowItWorks() {
 
         {/* MIDDLE */}
         <section aria-label="Process bridge" className="py-0">
-          <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
-            {/* Left text */}
-            <div className="flex md:justify-end justify-center">
-              <p className="text-lg md:text-xl text-gray-200">Take a nap.</p>
-            </div>
-
+          <div className="grid grid-cols-1 items-center gap-6">
             {/* Middle arrows (images) */}
             <div className="flex items-center justify-center gap-6">
-              {/* Left arrow pointing right */}
+              {/* Left arrow*/}
               <img
                 src={arrowImg}
                 alt="Arrow pointing right"
                 className="w-24 h-48 select-none"
                 draggable={false}
               />
-              {/* Right arrow pointing left (rotate the same image) */}
+              {/* Right arrow*/}
               <img
                 src={arrowImg}
                 alt="Arrow pointing left"
                 className="w-24 h-48 scale-x-[-1] select-none"
                 draggable={false}
               />
-            </div>
-
-            {/* Right text */}
-            <div className="flex md:justify-start justify-center">
-              <p className="text-lg md:text-xl text-gray-200">
-                It’s that simple!
-              </p>
             </div>
           </div>
         </section>
@@ -127,6 +116,13 @@ export default function HowItWorks() {
             >
               Step 2 – We Do the Magic
             </h2>
+          </div>
+
+          <div className="grid grid-cols-1 text-center">
+              <p className="text-base sm:text-lg text-neutral-300">
+                Take a nap. It’s that simple!
+              </p>
+              <p className="mt-4 text-gray-300"></p>
           </div>
 
           {/* Two images (left & right) */}
@@ -149,7 +145,7 @@ export default function HowItWorks() {
         </section>
 
         {/* Closing Section */}
-        <section aria-labelledby="closing" className="p-8 md:p-10 text-center">
+        {/* <section aria-labelledby="closing" className="p-8 md:p-10 text-center">
           <h3
             id="closing"
             className="text-2xl md:text-3xl font-semibold text-white"
@@ -167,9 +163,13 @@ export default function HowItWorks() {
               Get Started Today
             </a>
           </div>
-        </section>
+        </section> */}
       </main>
 
+      <WhatsAppFloatingButton
+        phone="233264525811"
+        message="Hello! I'd like to book a Vivid Studios session."
+      />
       <Footer />
     </div>
   );
