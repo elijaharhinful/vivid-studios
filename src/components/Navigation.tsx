@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const linksLeft = [
-  { label: "How It Works", href: "#how" },
+  { label: "How It Works", href: "/howitworks", isRoute: true  },
   { label: "Portfolio", href: "/portfolio", isRoute: true },
 ];
 
