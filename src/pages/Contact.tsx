@@ -31,7 +31,7 @@ export default function Contact() {
       {/* Content */}
       <section className="pb-24">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-3 gap-10">
-          {/* Left: Direct contact + social + newsletter */}
+          {/* Left: Direct contact*/}
           <aside className="lg:col-span-1 space-y-8">
             {/* Card: Direct Contact */}
             <div className="p-6">
@@ -42,7 +42,7 @@ export default function Contact() {
                 <div>
                   <p className="text-neutral-400">WhatsApp</p>
                   <a
-                    href="https://wa.me/233000000000"
+                    href="https://wa.me/233264525811"
                     target="_blank"
                     rel="noreferrer"
                     className="text-white underline decoration-neutral-700 underline-offset-4 hover:decoration-white"

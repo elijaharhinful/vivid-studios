@@ -22,61 +22,63 @@ export default function HowItWorks() {
       </header>
 
       <main className="mx-auto max-w-6xl px-4 py-4 md:py-4 space-y-10">
-       {/* TOP: Step 1 */}
-<section aria-labelledby="step1" className="space-y-12 text-center">
-  {/* Heading */}
-  <div>
-    <h2
-      id="step1"
-      className="text-2xl md:text-3xl font-semibold text-white"
-    >
-      Step 1 – Send Us Your Photos
-    </h2>
-  </div>
+        {/* TOP: Step 1 */}
+        <section aria-labelledby="step1" className="space-y-12 text-center">
+          {/* Heading */}
+          <div>
+            <h2
+              id="step1"
+              className="text-2xl md:text-3xl font-semibold text-white"
+            >
+              Step 1 – Send Us Your Photos
+            </h2>
+          </div>
 
-  {/* Text */}
-  <div className="prose prose-invert max-w-2xl mx-auto text-gray-300">
-    <p>
-      Upload{" "}
-      <span className="text-white font-semibold">
-        20 clear reference images
-      </span>
-      :
-    </p>
-    <ul className="list-disc pl-6 text-left mx-auto inline-block">
-      <li>
-        <span className="text-white font-medium">10 face shots</span>{" "}
-        (different angles &amp; expressions, no glasses or masks)
-      </li>
-      <li>
-        <span className="text-white font-medium">10 full-body shots</span>{" "}
-        (in fitted clothing — avoid oversized outfits)
-      </li>
-    </ul>
-    <p className="mt-4">
-      <span className="text-white font-medium">Tip:</span> Take photos
-      at eye or chest level to keep proportions natural.
-    </p>
-  </div>
+          {/* Text */}
+          <div className="prose prose-invert max-w-2xl mx-auto text-gray-300">
+            <p>
+              Upload{" "}
+              <span className="text-white font-semibold">
+                20 clear reference images
+              </span>
+              :
+            </p>
+            <ul className="list-disc pl-6 text-left mx-auto inline-block">
+              <li>
+                <span className="text-white font-medium">10 face shots</span>{" "}
+                (different angles &amp; expressions, no glasses or masks)
+              </li>
+              <li>
+                <span className="text-white font-medium">
+                  10 full-body shots
+                </span>{" "}
+                (in fitted clothing — avoid oversized outfits)
+              </li>
+            </ul>
+            <p className="mt-4">
+              <span className="text-white font-medium">Tip:</span> Take photos
+              at eye or chest level to keep proportions natural.
+            </p>
+          </div>
 
-  {/* Two images (left & right) */}
-  <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
-    <div className="overflow-hidden">
-      <img
-        src={leftTopImg}
-        alt="Sample reference image (left)"
-        className="w-full h-full object-contain"
-      />
-    </div>
-    <div className="overflow-hidden">
-      <img
-        src={rightTopImg}
-        alt="Sample reference image (right)"
-        className="w-full h-full object-contain"
-      />
-    </div>
-  </div>
-</section>
+          {/* Two images (left & right) */}
+          <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="overflow-hidden">
+              <img
+                src={leftTopImg}
+                alt="Sample reference image (left)"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="overflow-hidden">
+              <img
+                src={rightTopImg}
+                alt="Sample reference image (right)"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </section>
 
         {/* MIDDLE */}
         <section aria-label="Process bridge" className="py-0">
@@ -113,10 +115,10 @@ export default function HowItWorks() {
           </div>
 
           <div className="grid grid-cols-1 text-center">
-              <p className="text-base sm:text-lg text-neutral-300">
-                Take a nap. It’s that simple!
-              </p>
-              <p className="mt-4 text-gray-300"></p>
+            <p className="text-base sm:text-lg text-neutral-300">
+              Take a nap. It’s that simple!
+            </p>
+            <p className="mt-4 text-gray-300"></p>
           </div>
 
           {/* Two images (left & right) */}
@@ -139,7 +141,7 @@ export default function HowItWorks() {
         </section>
 
         {/* Closing Section */}
-        {/* <section aria-labelledby="closing" className="p-8 md:p-10 text-center">
+        <section aria-labelledby="closing" className="p-8 md:p-10 text-center">
           <h3
             id="closing"
             className="text-2xl md:text-3xl font-semibold text-white"
@@ -151,13 +153,15 @@ export default function HowItWorks() {
           </p>
           <div className="mt-8">
             <a
-              href="/contact"
+              href="https://wa.me/233264525811"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 bg-white text-black font-semibold border border-white rounded-none hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               Get Started Today
             </a>
           </div>
-        </section> */}
+        </section>
       </main>
 
       <WhatsAppFloatingButton
